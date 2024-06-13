@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ servicio.nombre }}{% endblock %}
+
+{% block header %}
+    <h2>{{ servicio.nombre }}</h2>
+{% endblock %}
+
+{% block content %}
+    <div>
+        {% if servicio.imagen %}
+        <img src="{{ servicio.imagen.url }}" alt="{{ servicio.nombre}}">
+        {% endif %}
+        <p>{{ servicio.descripcion }}</p>
+        <p>{{ servicio.precio }}</p>
+        <button>Solicitar</button>
+        <a href="{% url 'servicios' %}"><button>Volver</button></a>
+    </div>
+{% endblock %}
